@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mirravox – Reverse Audio</title>
-  <meta name="description" content="Mirravox lets you record your voice, reverse it, and play it back. Simple, fun, and fast.">
+  <title>Pixelnest Studio – Mobile app development</title>
+  <meta name="description" content="Pixelnest Studio builds simple, well-crafted mobile apps with Swift, Kotlin, Flutter, React Native and more.">
   <style>
     :root {
       --bg: #0f1020;
@@ -29,8 +29,7 @@
     header { padding: 20px 0; }
     header .container { display: flex; justify-content: space-between; align-items: center; }
     .logo { font-weight: 800; font-size: 1.25rem; letter-spacing: .5px; }
-    .logo span { color: var(--accent-2); }
-    nav a { margin-left: 24px; color: var(--muted); font-size: .95rem; transition: color .2s; }
+        nav a { margin-left: 24px; color: var(--muted); font-size: .95rem; transition: color .2s; }
     nav a:hover { color: var(--text); }
 
     .hero {
@@ -52,13 +51,9 @@
     }
     .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,92,255,.4); }
 
-    .wave { display: flex; justify-content: center; align-items: center; gap: 5px; height: 70px; margin-top: 48px; }
-    .wave i {
-      display: block; width: 6px; border-radius: 3px;
-      background: linear-gradient(var(--accent), var(--accent-2));
-      animation: pulse 1.2s ease-in-out infinite;
-    }
-    @keyframes pulse { 0%,100% { height: 12px; } 50% { height: 64px; } }
+    .card .badge { margin-top: 14px; color: var(--accent-2); font-weight: 600; }
+    a.card { display: block; transition: transform .2s; }
+    a.card:hover { transform: translateY(-4px); }
 
     section { padding: 70px 0; }
     section h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; }
@@ -92,18 +87,18 @@
       .hero { padding: 56px 0 72px; }
     }
     @media (prefers-reduced-motion: reduce) {
-      .wave i { animation: none; height: 36px; }
       html { scroll-behavior: auto; }
+      * { transition: none !important; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
-      <a href="#" class="logo">Mirra<span>vox</span></a>
+      <a href="#" class="logo" data-brand></a>
       <nav>
-        <a href="#features">Features</a>
-        <a href="#how">How it works</a>
+        <a href="#tech">Technologies</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -112,60 +107,54 @@
   <main>
     <div class="hero">
       <div class="container">
-        <h1>Hear your voice <em>in reverse</em></h1>
-        <p>Mirravox – Reverse Audio lets you record a sound, flip it backwards, and play it back instantly. Simple, fun, and fast.</p>
-        <!-- TODO: replace # with the real App Store link once the app is live -->
-        <a class="btn" href="#" id="download">Download on the App Store</a>
-        <div class="wave" aria-hidden="true"></div>
+        <h1>Simple apps, <em>made with care</em></h1>
+        <p>We are a small product team building useful, easy-to-use mobile apps for everyday life.</p>
+        <a class="btn" href="#tech">Our technologies</a>
       </div>
     </div>
 
-    <section id="features">
+    <section id="tech">
       <div class="container">
-        <h2>Features</h2>
-        <div class="grid">
-          <div class="card">
-            <div class="icon">🎙️</div>
-            <h3>Record</h3>
-            <p>Capture your voice or any sound with a single tap.</p>
-          </div>
-          <div class="card">
-            <div class="icon">⏪</div>
-            <h3>Reverse</h3>
-            <p>Instantly flip your recording and hear it played backwards.</p>
-          </div>
-          <div class="card">
-            <div class="icon">🔁</div>
-            <h3>Play &amp; Repeat</h3>
-            <p>Listen again and again, then try to imitate the reversed sound.</p>
-          </div>
-          <div class="card">
-            <div class="icon">📤</div>
-            <h3>Share</h3>
-            <p>Send your funniest reversed clips to friends.</p>
-          </div>
-        </div>
+        <h2>Mobile languages we build with</h2>
+        <!-- Rendered from the TECHS list in the script below -->
+        <div class="grid" id="tech-grid"></div>
       </div>
     </section>
 
-    <section id="how">
+    <section id="about">
       <div class="container">
-        <h2>How it works</h2>
-        <ol class="steps">
-          <li><strong>Tap to record</strong>Say something or make any sound.</li>
-          <li><strong>Reverse it</strong>Mirravox flips the audio in a moment.</li>
-          <li><strong>Play &amp; share</strong>Listen to the result and share it with friends.</li>
-        </ol>
+        <h2>What we care about</h2>
+        <div class="grid">
+          <div class="card">
+            <div class="icon">✨</div>
+            <h3>Simplicity</h3>
+            <p>Clean, focused experiences that are easy to pick up and use.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🔒</div>
+            <h3>Privacy</h3>
+            <p>We respect your data and are transparent about how it is used.</p>
+          </div>
+          <div class="card">
+            <div class="icon">⚡</div>
+            <h3>Quality</h3>
+            <p>Fast, reliable and regularly updated apps you can count on.</p>
+          </div>
+          <div class="card">
+            <div class="icon">💬</div>
+            <h3>Support</h3>
+            <p>Real people listening to your feedback and ready to help.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="contact">
       <div class="container">
         <div class="cta">
-          <h2>Ready to try it?</h2>
-          <p>Questions or feedback? We'd love to hear from you.</p>
-          <!-- TODO: replace with the real support email -->
-          <a class="btn" href="mailto:support@example.com">Contact Support</a>
+          <h2>Get in touch</h2>
+          <p>Questions, feedback or partnership ideas? We'd love to hear from you.</p>
+          <a class="btn" data-email href="#">Contact Support</a>
         </div>
       </div>
     </section>
@@ -177,21 +166,46 @@
         <!-- TODO: add real Privacy Policy / Terms pages (required by App Store) -->
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Use</a>
-        <a href="mailto:support@example.com">Support</a>
+        <a data-email href="#">Support</a>
       </p>
-      <p>&copy; <span id="year"></span> Mirravox. All rights reserved.</p>
+      <p>&copy; <span id="year"></span> <span data-brand></span>. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
-    // Build animated waveform bars
-    const wave = document.querySelector('.wave');
-    for (let i = 0; i < 28; i++) {
-      const bar = document.createElement('i');
-      bar.style.animationDelay = (i * 0.07).toFixed(2) + 's';
-      wave.appendChild(bar);
-    }
+    // ===== Edit this config to reuse the page for any publisher =====
+    const SITE = {
+      brand: 'Pixelnest Studio',
+      email: 'support@example.com'   // TODO: support email
+    };
+    const TECHS = [
+      { icon: '🍎', name: 'Swift', desc: 'Modern native language for iOS, iPadOS, macOS and watchOS apps.' },
+      { icon: '🤖', name: 'Kotlin', desc: 'Concise, safe language for native Android development.' },
+      { icon: '🎯', name: 'Dart / Flutter', desc: 'One codebase for beautiful apps on iOS and Android.' },
+      { icon: '⚛️', name: 'JavaScript / TypeScript', desc: 'Cross-platform apps with React Native.' },
+      { icon: '🧱', name: 'Objective-C', desc: 'Maintaining and extending established iOS codebases.' },
+      { icon: '☕', name: 'Java', desc: 'Proven language behind many long-lived Android apps.' },
+      { icon: '🔷', name: 'C# / .NET MAUI', desc: 'Cross-platform mobile apps in the .NET ecosystem.' },
+      { icon: '🎮', name: 'C# / Unity', desc: 'Games and interactive experiences for mobile.' }
+    ];
+    // ================================================================
+
+    document.querySelectorAll('[data-brand]').forEach(el => el.textContent = SITE.brand);
+    document.querySelectorAll('[data-email]').forEach(el => el.href = 'mailto:' + SITE.email);
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const grid = document.getElementById('tech-grid');
+    TECHS.forEach(t => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      [['div', 'icon', t.icon], ['h3', '', t.name], ['p', '', t.desc]].forEach(([tag, cls, text]) => {
+        const n = document.createElement(tag);
+        if (cls) n.className = cls;
+        n.textContent = text;
+        card.appendChild(n);
+      });
+      grid.appendChild(card);
+    });
   </script>
 </body>
 </html>
